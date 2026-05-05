@@ -68,8 +68,13 @@ class ConsultasService {
       throw new Error("Consulta não encontrada");
     }
 
-    if (!isAdmin && consulta.usuarioId !== usuarioId) {
-      throw new Error("Você não tem permissão para visualizar esta consulta");
+    if (!isAdmin) {
+      if (usuarioId == null) {
+        throw new Error("Usuário não autenticado");
+      }
+      if (consulta.usuarioId !== usuarioId) {
+        throw new Error("Você não tem permissão para visualizar esta consulta");
+      }
     }
 
     return consulta;

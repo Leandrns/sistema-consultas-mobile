@@ -48,6 +48,11 @@ export type Consulta = {
   horario: string;
   status: StatusConsulta;
   observacoes?: string;
+  valor?: number;
+  prioridade?: boolean;
+  emergencia?: boolean;
+  pressaoSistolica?: number;
+  pressaoDiastolica?: number;
 };
 
 // ===== TIPOS PARA FORMULÁRIOS =====

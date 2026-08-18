@@ -9,6 +9,8 @@ export type StatusConsulta = "agendada" | "confirmada" | "cancelada" | "realizad
 
 export type TipoUsuario = "paciente" | "medico" | "admin";
 
+import { ClassificacaoPA } from "../types/pressaoArterial";
+
 export type Especialidade =
   | "Cardiologia"
   | "Dermatologia"
@@ -48,6 +50,11 @@ export type Consulta = {
   horario: string;
   status: StatusConsulta;
   observacoes?: string;
+  prioridade?: boolean;
+  emergencia?: boolean;
+  pressaoSistolica?: number;
+  pressaoDiastolica?: number;
+  classificacaoPA?: ClassificacaoPA;
 };
 
 // ===== TIPOS PARA FORMULÁRIOS =====

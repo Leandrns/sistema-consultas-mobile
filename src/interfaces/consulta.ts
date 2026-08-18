@@ -1,5 +1,6 @@
 import { StatusConsulta } from "../types/statusConsulta";
 import { Especialidade } from "../types";
+import { ClassificacaoPA } from "../types/pressaoArterial";
 
 export interface Consulta {
   id: number;
@@ -14,4 +15,9 @@ export interface Consulta {
   status: StatusConsulta;
   observacoes?: string;
   valor?: number;
+  prioridade?: boolean;
+  emergencia?: boolean;
+  pressaoSistolica?: number;
+  pressaoDiastolica?: number;
+  classificacaoPA?: ClassificacaoPA;
 }
